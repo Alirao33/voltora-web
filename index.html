@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,11 +24,7 @@
             --font-mono: 'JetBrains Mono', monospace;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--bg-main);
@@ -64,9 +59,7 @@
             letter-spacing: -0.5px;
         }
 
-        .brand span {
-            color: var(--accent-green);
-        }
+        .brand span { color: var(--accent-green); }
 
         nav ul {
             display: flex;
@@ -82,9 +75,7 @@
             transition: color 0.2s ease;
         }
 
-        nav a:hover {
-            color: var(--accent-green);
-        }
+        nav a:hover { color: var(--accent-green); }
 
         .nav-btn {
             background: linear-gradient(135deg, var(--accent-green), #00c853);
@@ -106,7 +97,7 @@
         .hero {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 4rem 5% 3rem 5%;
+            padding: 3rem 5% 2rem 5%;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
             gap: 3rem;
@@ -128,7 +119,7 @@
         }
 
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             line-height: 1.15;
             font-weight: 800;
             margin-bottom: 1.2rem;
@@ -143,14 +134,11 @@
 
         .hero p {
             color: var(--text-secondary);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 2rem;
         }
 
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-        }
+        .hero-actions { display: flex; gap: 1rem; }
 
         .btn-outline {
             border: 1px solid var(--border-color);
@@ -168,103 +156,20 @@
             border-color: var(--accent-cyan);
         }
 
-        /* Live IoT Dashboard Card */
-        .telemetry-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.8rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            position: relative;
-        }
-
-        .telemetry-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-        }
-
-        .card-title-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .card-title-bar h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .live-pulse {
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-green);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-green);
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
-        }
-
-        .telemetry-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .t-box {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--border-color);
-            padding: 1rem;
-            border-radius: 10px;
-        }
-
-        .t-box label {
-            display: block;
-            font-size: 0.78rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .t-box .val {
-            font-family: var(--font-mono);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
         /* Section Commons */
         .section-container {
             max-width: 1280px;
-            margin: 4rem auto;
+            margin: 3rem auto;
             padding: 0 5%;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-header h2 {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
             letter-spacing: -0.5px;
@@ -275,7 +180,123 @@
             font-size: 1rem;
         }
 
-        /* Interactive Calculators Layout */
+        /* RIDER APP CONSOLE */
+        .rider-console-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-green);
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0, 230, 118, 0.08);
+            margin-bottom: 3rem;
+        }
+
+        .rider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .rider-badge {
+            background: rgba(0, 229, 255, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .rider-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .form-group input, .form-group select {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.75rem 0.9rem;
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent-green);
+        }
+
+        .btn-action {
+            background: linear-gradient(135deg, var(--accent-green), #00c853);
+            color: #000;
+            border: none;
+            padding: 0.85rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 0.95rem;
+            width: 100%;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-action:hover { opacity: 0.9; }
+
+        .dispatch-status-box {
+            background: #0b0f19;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .dispatch-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dispatch-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .dispatch-list li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.08);
+            padding-bottom: 0.4rem;
+        }
+
+        .dispatch-list li span { color: var(--text-secondary); }
+
+        /* Calculators Layout */
         .calc-dual-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -293,47 +314,12 @@
             font-size: 1.3rem;
             margin-bottom: 1.2rem;
             color: var(--accent-green);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        .form-group.full {
-            grid-column: span 2;
-        }
-
-        .form-group label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .form-group input, .form-group select {
-            background: var(--bg-main);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 0.7rem 0.9rem;
-            border-radius: 8px;
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.2s ease;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            border-color: var(--accent-green);
         }
 
         .result-box {
@@ -351,14 +337,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .result-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .result-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
+        .result-label { font-size: 0.9rem; color: var(--text-secondary); }
 
         .result-value {
             font-family: var(--font-mono);
@@ -396,12 +375,6 @@
             border: 1px solid var(--border-color);
             border-radius: 14px;
             padding: 1.5rem;
-            transition: border-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .station-card:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-3px);
         }
 
         .station-header {
@@ -409,11 +382,6 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
-        }
-
-        .station-name {
-            font-size: 1.1rem;
-            font-weight: 700;
         }
 
         .progress-bar-bg {
@@ -437,82 +405,6 @@
             color: var(--text-secondary);
         }
 
-        /* Subscription Tiers */
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .plan-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .plan-card.featured {
-            border-color: var(--accent-green);
-            background: rgba(0, 230, 118, 0.02);
-        }
-
-        .plan-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-green);
-            color: #000;
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 0.2rem 0.8rem;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-
-        .plan-price {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin: 1rem 0;
-        }
-
-        .plan-price span {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .plan-features {
-            list-style: none;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .plan-features li {
-            margin-bottom: 0.6rem;
-        }
-
-        /* Developer API Docs Panel */
-        .api-panel {
-            background: #0d1117;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 2rem;
-            font-family: var(--font-mono);
-            font-size: 0.88rem;
-            color: #c9d1d9;
-            overflow-x: auto;
-        }
-
-        .code-keyword { color: #ff7b72; }
-        .code-string { color: #a5d6ff; }
-        .code-comment { color: #8b949e; }
-        .code-func { color: #d2a8ff; }
-
-        /* Footer */
         footer {
             border-top: 1px solid var(--border-color);
             padding: 3rem 5%;
@@ -523,15 +415,7 @@
         }
 
         @media (max-width: 900px) {
-            .hero, .calc-dual-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-group.full {
-                grid-column: span 1;
-            }
+            .hero, .rider-grid, .calc-dual-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -542,57 +426,96 @@
         <a href="#" class="brand">⚡ VOLT<span>ORA</span></a>
         <nav>
             <ul>
-                <li><a href="#telemetry">Live IoT</a></li>
+                <li><a href="#rider-app">Rider App</a></li>
                 <li><a href="#health-calc">Health Engine</a></li>
                 <li><a href="#pricing-calc">Dynamic Pricing</a></li>
-                <li><a href="#stations">Stations & Rebalancing</a></li>
-                <li><a href="#plans">Plans</a></li>
-                <li><a href="#api-docs">API Docs</a></li>
+                <li><a href="#stations">Stations</a></li>
             </ul>
         </nav>
-        <a href="#pricing-calc" class="nav-btn">Swap Now</a>
+        <a href="#rider-app" class="nav-btn">Swap Battery Now</a>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div>
-            <div class="hero-tag"><span class="live-pulse"></span> E-Bike Battery Swap Network • Karachi</div>
+            <div class="hero-tag">⚡ E-Bike Battery Swap Network • Karachi</div>
             <h1>Instant Swaps. <br><span class="highlight">Zero Charging Wait.</span></h1>
-            <p>Voltora operates smart swap lockers and delivery vans across Karachi. Powered by IoT cell health diagnostics, KE tariff dynamic pricing, and AI fleet rebalancing.</p>
+            <p>Voltora operates smart swap lockers across Karachi. Access reserved VIP slots or public nearest station swaps in under 60 seconds.</p>
             <div class="hero-actions">
-                <a href="#pricing-calc" class="nav-btn">Calculate Swap Cost</a>
+                <a href="#rider-app" class="nav-btn">Launch Rider Dispatch</a>
                 <a href="#stations" class="btn-outline">Find Nearest Station</a>
             </div>
         </div>
 
-        <!-- Live IoT Telemetry Monitor -->
-        <div class="telemetry-card" id="telemetry">
-            <div class="card-title-bar">
-                <h3><span class="live-pulse"></span> MQTT Live Stream: VOLT-PK-0821</h3>
-                <span class="status-pill normal" id="livePill">NORMAL</span>
-            </div>
-            <div class="telemetry-grid">
-                <div class="t-box">
-                    <label>Voltage (V)</label>
-                    <div class="val" id="liveV">48.2 V</div>
+        <!-- Telemetry Card -->
+        <div class="calc-card" style="padding: 1.5rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">📡 Active Bike Telemetry: VOLT-PK-0821</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+                <div style="background: rgba(15,23,42,0.8); padding: 0.8rem; border-radius: 8px;">
+                    <span style="font-size: 0.75rem; color: var(--text-secondary);">State of Charge</span>
+                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent-warn);">12.0% (Low)</div>
                 </div>
-                <div class="t-box">
-                    <label>Temperature (°C)</label>
-                    <div class="val" id="liveT">38.5 °C</div>
-                </div>
-                <div class="t-box">
-                    <label>State of Charge (SoC)</label>
-                    <div class="val" id="liveSoC">92.0%</div>
-                </div>
-                <div class="t-box">
-                    <label>Health Score</label>
-                    <div class="val" style="color: var(--accent-green);" id="liveScore">88.5%</div>
+                <div style="background: rgba(15,23,42,0.8); padding: 0.8rem; border-radius: 8px;">
+                    <span style="font-size: 0.75rem; color: var(--text-secondary);">Pack Temp</span>
+                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">38.5 °C</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Computational Engines -->
+    <!-- 1. RIDER MOBILE DISPATCH CONSOLE -->
+    <section class="section-container" id="rider-app">
+        <div class="rider-console-card">
+            <div class="rider-header">
+                <div>
+                    <h2 style="font-size: 1.6rem; font-weight: 800;">📱 Rider Swap Console</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Connected to FastAPI Engine on Port 8000</p>
+                </div>
+                <span class="rider-badge">Live Dispatch Mode</span>
+            </div>
+
+            <div class="rider-grid">
+                <!-- Inputs -->
+                <div>
+                    <div class="form-group">
+                        <label>Rider Account Identity</label>
+                        <select id="rider_id_select" onchange="toggleRiderMode()">
+                            <option value="RDR-9021">Tariq Mahmood (#RDR-9021) — Subscribed VIP Rider</option>
+                            <option value="RDR-4402">Delivery Partner (#RDR-4402) — Guest / Pay-As-You-Go</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Current Pack ID</label>
+                        <input type="text" id="rider_pack_id" value="VOLT-0199">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location Coordinates (Karachi GPS)</label>
+                        <input type="text" id="rider_gps" value="24.8607 N, 67.0211 E (Saddar area)">
+                    </div>
+
+                    <button class="btn-action" onclick="requestRiderSwap()">⚡ Request Instant Smart Swap</button>
+                </div>
+
+                <!-- Output Display -->
+                <div class="dispatch-status-box" id="dispatchOutputBox">
+                    <div class="dispatch-title">
+                        <span>🔒 Ready for Dispatch Request</span>
+                    </div>
+                    <ul class="dispatch-list">
+                        <li><span>Rider Status:</span> <strong id="out_rider_name">Tariq Mahmood (#RDR-9021)</strong></li>
+                        <li><span>Routing Type:</span> <strong id="out_mode">Pending Request</strong></li>
+                        <li><span>Assigned Station:</span> <strong id="out_station">Click 'Request Instant Smart Swap'</strong></li>
+                        <li><span>Locker Slot:</span> <strong id="out_slot">--</strong></li>
+                        <li><span>Fresh Pack Released:</span> <strong id="out_fresh_pack">--</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. TECHNICAL CALCULATORS FOR DEMO / EVALUATION -->
     <section class="section-container" id="health-calc">
         <div class="section-header">
             <h2>Computational Engineering Engines</h2>
@@ -600,7 +523,6 @@
         </div>
 
         <div class="calc-dual-grid">
-            
             <!-- Engine 1: Battery Health Engine -->
             <div class="calc-card">
                 <h3>🔋 Battery Health Engine</h3>
@@ -632,14 +554,6 @@
                             <option value="NMC">NMC (700 Cycles Life)</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Recorded Faults</label>
-                        <input type="number" id="h_faults" value="2">
-                    </div>
-                    <div class="form-group">
-                        <label>Operating Hours</label>
-                        <input type="number" id="h_hours" value="500">
-                    </div>
                 </div>
 
                 <div class="result-box">
@@ -650,10 +564,6 @@
                     <div class="result-row">
                         <span class="result-label">State of Health (SoH):</span>
                         <span class="result-value" id="out_soh">92.0%</span>
-                    </div>
-                    <div class="result-row">
-                        <span class="result-label">Thermal Penalty:</span>
-                        <span class="result-value" id="out_ptemp">17.50</span>
                     </div>
                     <div class="result-row">
                         <span class="result-label">Composite Health Score:</span>
@@ -686,14 +596,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Fulfillment Option</label>
-                        <select id="p_del">
-                            <option value="0">Station / Locker Swap (0 PKR)</option>
-                            <option value="150">Pay-First Home Delivery (+150 PKR)</option>
-                        </select>
-                    </div>
-                    <div class="form-group full">
-                        <label>Demand Surge Factor (Surge Multiplier)</label>
+                        <label>Demand Surge Factor</label>
                         <input type="number" id="p_surge" value="1.0" step="0.1" min="1.0" max="2.0">
                     </div>
                 </div>
@@ -707,1274 +610,150 @@
                         <span class="result-label">Grid Electricity (65 PKR/kWh):</span>
                         <span class="result-value" id="out_grid">62.40 PKR</span>
                     </div>
-                    <div class="result-row">
-                        <span class="result-label">Degradation Wear Fee:</span>
-                        <span class="result-value" id="out_wear">5.76 PKR</span>
-                    </div>
-                    <div class="result-row">
-                        <span class="result-label">Base Cost Sum:</span>
-                        <span class="result-value" id="out_base">98.16 PKR</span>
-                    </div>
                     <div class="result-row" style="margin-top: 0.8rem; padding-top: 0.5rem; border-top: 1px solid var(--border-color);">
                         <span class="result-label">Final Swap Price (incl. 20% Margin):</span>
                         <span class="result-value large" id="out_final">117.79 PKR</span>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Station Rebalancing Monitor -->
+    <!-- Stations Fleet Status -->
     <section class="section-container" id="stations">
         <div class="section-header">
             <h2>Karachi Swap Station Fleet Monitor</h2>
-            <p>Live inventory tracking and automated van rebalancing priority ranking</p>
+            <p>Live inventory tracking across Karachi lockers</p>
         </div>
 
         <div class="station-grid">
             <div class="station-card">
                 <div class="station-header">
-                    <div class="station-name">Clifton Block 2 Locker</div>
+                    <strong>Clifton Block 2 Locker</strong>
                     <span class="status-pill normal">STOCK OK</span>
                 </div>
                 <div class="station-stats">
                     <span>Stock: 8 / 10 Charged</span>
-                    <span>Priority (P_s): 0.20</span>
                 </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 80%;"></div>
-                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
             </div>
 
             <div class="station-card">
                 <div class="station-header">
-                    <div class="station-name">Gulshan-e-Iqbal Hub</div>
-                    <span class="status-pill warning">REBALANCING NEEDED</span>
-                </div>
-                <div class="station-stats">
-                    <span>Stock: 3 / 12 Charged</span>
-                    <span>Priority (P_s): 0.75</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 25%; background: var(--accent-warn);"></div>
-                </div>
-            </div>
-
-            <div class="station-card">
-                <div class="station-header">
-                    <div class="station-name">Saddar Empress Locker</div>
+                    <strong>Saddar Empress Locker</strong>
                     <span class="status-pill retire">CRITICAL SHORTAGE</span>
                 </div>
                 <div class="station-stats">
                     <span>Stock: 1 / 10 Charged</span>
-                    <span>Priority (P_s): 0.90</span>
                 </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 10%; background: var(--accent-danger);"></div>
-                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 10%; background: var(--accent-danger);"></div></div>
             </div>
-
-            <div class="station-card">
-                <div class="station-header">
-                    <div class="station-name">DHA Phase 6 Station</div>
-                    <span class="status-pill normal">STOCK OK</span>
-                </div>
-                <div class="station-stats">
-                    <span>Stock: 9 / 10 Charged</span>
-                    <span>Priority (P_s): 0.10</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 90%;"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Subscription Plans -->
-    <section class="section-container" id="plans">
-        <div class="section-header">
-            <h2>Flexible Rider Subscription Plans</h2>
-            <p>Pay per swap or save with monthly plans tailored for commuters and gig drivers</p>
-        </div>
-
-        <div class="plans-grid">
-            <div class="plan-card">
-                <h3>Pay As You Go</h3>
-                <div class="plan-price">Dynamic <span>/ swap</span></div>
-                <ul class="plan-features">
-                    <li>✓ Standard station & locker swaps</li>
-                    <li>✓ Live health transparency</li>
-                    <li>✓ Pay-first online payment</li>
-                </ul>
-                <a href="#pricing-calc" class="btn-outline" style="display: block;">Calculate Swap</a>
-            </div>
-
-            <div class="plan-card featured">
-                <span class="plan-badge">POPULAR COMMUTER</span>
-                <h3>Starter 10</h3>
-                <div class="plan-price">1,100 PKR <span>/ month</span></div>
-                <ul class="plan-features">
-                    <li>✓ Includes 10 battery swaps</li>
-                    <li>✓ Reserved locker priority</li>
-                    <li>✓ Zero peak demand surge surcharge</li>
-                </ul>
-                <a href="#pricing-calc" class="nav-btn" style="display: block;">Choose Plan</a>
-            </div>
-
-            <div class="plan-card">
-                <h3>Pro 30</h3>
-                <div class="plan-price">3,150 PKR <span>/ month</span></div>
-                <ul class="plan-features">
-                    <li>✓ Includes 30 battery swaps</li>
-                    <li>✓ 1 Free Home Delivery / month</li>
-                    <li>✓ Priority station allocation</li>
-                </ul>
-                <a href="#pricing-calc" class="btn-outline" style="display: block;">Choose Plan</a>
-            </div>
-
-            <div class="plan-card">
-                <h3>Gig Delivery 60</h3>
-                <div class="plan-price">6,000 PKR <span>/ month</span></div>
-                <ul class="plan-features">
-                    <li>✓ Includes 60 battery swaps</li>
-                    <li>✓ 3 Free Home Deliveries / month</li>
-                    <li>✓ Dedicated delivery van dispatch</li>
-                </ul>
-                <a href="#pricing-calc" class="btn-outline" style="display: block;">Choose Plan</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Developer & Cloud API Panel -->
-    <section class="section-container" id="api-docs">
-        <div class="section-header">
-            <h2>Developer & Cloud Architecture Specification</h2>
-            <p>Private cloud database (PostgreSQL + TimescaleDB) and FastAPI backend endpoints</p>
-        </div>
-
-        <div class="api-panel">
-            <p class="code-comment">// Developer-Only Cloud Database Connection & MQTT Architecture</p>
-            <p><span class="code-keyword">POST</span> <span class="code-string">https://api.voltora.online/v1/swaps/process</span></p>
-            <br>
-            <p class="code-comment">// MQTT Ingestion Topic Structure</p>
-            <p><span class="code-func">Topic:</span> <span class="code-string">voltora/{station_id}/{slot_id}/telemetry</span></p>
-            <p><span class="code-func">Payload:</span> { <span class="code-string">"voltage"</span>: 48.0, <span class="code-string">"capacity_ah"</span>: 20.0, <span class="code-string">"temperature_c"</span>: 42.0, <span class="code-string">"cycles"</span>: 300 }</p>
-            <br>
-            <p class="code-comment">// FastAPI Response Endpoint Output</p>
-            <p>{ <span class="code-string">"health_score"</span>: 88.46, <span class="code-string">"status"</span>: <span class="code-string">"NORMAL_OPERATION"</span>, <span class="code-string">"price_final_pkr"</span>: 117.79 }</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Voltora Battery-Swap Network &copy; 2026. Built for CS2021 Complex Engineering Problem Project.</p>
+        <p>Voltora Battery-Swap Network &copy; 2026. Built for CS2021 Capstone Project.</p>
         <p>Team Members: Muhammad Ali Rao (25K-6059) & Saad Hussain (25K-6032)</p>
     </footer>
 
-    <!-- Interactive JavaScript Engine -->
+    <!-- JavaScript Engine -->
     <script>
-        // 1. Live IoT Telemetry Simulator
-        function updateLiveStream() {
-            const v = (47.5 + Math.random() * 1.2).toFixed(1);
-            const t = (37.0 + Math.random() * 4.0).toFixed(1);
-            const soc = (90.0 + Math.random() * 8.0).toFixed(1);
-            
-            document.getElementById('liveV').innerText = v + " V";
-            document.getElementById('liveT').innerText = t + " °C";
-            document.getElementById('liveSoC').innerText = soc + "%";
-            
-            if (parseFloat(t) > 55.0) {
-                document.getElementById('livePill').className = "status-pill retire";
-                document.getElementById('livePill').innerText = "LOCKOUT";
-            } else if (parseFloat(t) > 40.0) {
-                document.getElementById('livePill').className = "status-pill warning";
-                document.getElementById('livePill').innerText = "WARM";
-            } else {
-                document.getElementById('livePill').className = "status-pill normal";
-                document.getElementById('livePill').innerText = "NORMAL";
+        const API_BASE = "http://127.0.0.1:8000";
+
+        function toggleRiderMode() {
+            const rider = document.getElementById('rider_id_select').value;
+            document.getElementById('out_rider_name').innerText = rider === 'RDR-9021' ? 'Tariq Mahmood (#RDR-9021)' : 'Delivery Partner (#RDR-4402)';
+        }
+
+        async function requestRiderSwap() {
+            const riderId = document.getElementById('rider_id_select').value;
+            const packId = document.getElementById('rider_pack_id').value;
+
+            try {
+                const response = await fetch(`${API_BASE}/api/rider/smart-swap`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        rider_id: riderId,
+                        current_lat: 24.8607,
+                        current_lng: 67.0211,
+                        returned_pack_id: packId
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    if (data.routing_mode === "SUBSCRIBED_DEDICATED") {
+                        document.getElementById('out_mode').innerHTML = `<span style="color:var(--accent-cyan);">🔒 Subscribed VIP Dedicated Slot</span>`;
+                        document.getElementById('out_station').innerText = `${data.station_id} (Private Locker)`;
+                        document.getElementById('out_slot').innerText = `Door ${data.slot_number} (Unlocked)`;
+                        document.getElementById('out_fresh_pack').innerText = data.released_pack;
+                    } else {
+                        document.getElementById('out_mode').innerHTML = `<span style="color:var(--accent-green);">📍 Public Nearest Station Routing</span>`;
+                        document.getElementById('out_station').innerText = `${data.station_name} (${data.station_id})`;
+                        document.getElementById('out_slot').innerText = `Door ${data.slot_number} (Allocated)`;
+                        document.getElementById('out_fresh_pack').innerText = data.released_pack;
+                    }
+                }
+            } catch (err) {
+                // Offline fallback response logic
+                if (riderId === "RDR-9021") {
+                    document.getElementById('out_mode').innerHTML = `<span style="color:var(--accent-cyan);">🔒 Subscribed VIP Dedicated Slot</span>`;
+                    document.getElementById('out_station').innerText = `STN-KHI-03 (Saddar Empress Locker)`;
+                    document.getElementById('out_slot').innerText = `Door 04 (Unlocked)`;
+                    document.getElementById('out_fresh_pack').innerText = `VOLT-0554 (98% Charged)`;
+                } else {
+                    document.getElementById('out_mode').innerHTML = `<span style="color:var(--accent-green);">📍 Public Nearest Station Routing</span>`;
+                    document.getElementById('out_station').innerText = `Clifton Block 2 Locker (STN-KHI-01)`;
+                    document.getElementById('out_slot').innerText = `Door 02 (Allocated)`;
+                    document.getElementById('out_fresh_pack').innerText = `VOLT-0821 (92% Charged)`;
+                }
             }
         }
-        setInterval(updateLiveStream, 3000);
 
-        // 2. Battery Health Calculator Engine
+        // Calculators Logic
         function calcHealth() {
             const rem = parseFloat(document.getElementById('h_rem').value) || 0;
             const full = parseFloat(document.getElementById('h_full').value) || 0;
             const rated = parseFloat(document.getElementById('h_rated').value) || 1;
             const temp = parseFloat(document.getElementById('h_temp').value) || 0;
             const cycles = parseFloat(document.getElementById('h_cycles').value) || 0;
-            const chem = document.getElementById('h_chem').value;
-            const faults = parseFloat(document.getElementById('h_faults').value) || 0;
-            const hours = parseFloat(document.getElementById('h_hours').value) || 1;
 
             const soc = Math.min(100, Math.max(0, (rem / full) * 100));
             const soh = Math.min(100, Math.max(0, (full / rated) * 100));
-
-            let p_temp = 0;
-            if (temp > 55) {
-                p_temp = 100;
-            } else if (temp > 35) {
-                p_temp = 2.5 * (temp - 35);
-            }
-
-            const rated_cycles = (chem === 'LFP') ? 1500 : 700;
-            const p_cycle = Math.min(100, (cycles / rated_cycles) * 100);
-            const p_fault = Math.min(100, (faults / hours) * 100);
-
-            const score = 0.5 * soh + 0.2 * (100 - p_temp) + 0.2 * (100 - p_cycle) + 0.1 * (100 - p_fault);
+            const score = 0.5 * soh + 0.3 * (100 - Math.min(100, (cycles/1500)*100)) + 0.2 * (temp > 55 ? 0 : 100);
 
             document.getElementById('out_soc').innerText = soc.toFixed(1) + "%";
             document.getElementById('out_soh').innerText = soh.toFixed(1) + "%";
-            document.getElementById('out_ptemp').innerText = p_temp.toFixed(2);
             document.getElementById('out_score').innerText = score.toFixed(2) + "%";
-
-            const statusEl = document.getElementById('out_status');
-            if (temp > 55) {
-                statusEl.className = "status-pill retire";
-                statusEl.innerText = "HARD LOCKOUT (OVERTEMP)";
-            } else if (score >= 80) {
-                statusEl.className = "status-pill normal";
-                statusEl.innerText = "NORMAL OPERATION";
-            } else if (score >= 70) {
-                statusEl.className = "status-pill warning";
-                statusEl.innerText = "MAINTENANCE WARNING";
-            } else {
-                statusEl.className = "status-pill retire";
-                statusEl.innerText = "RETIRE TO 2ND LIFE";
-            }
         }
 
-        // Attach listeners to Health inputs
-        ['h_rem', 'h_full', 'h_rated', 'h_temp', 'h_cycles', 'h_chem', 'h_faults', 'h_hours'].forEach(id => {
-            document.getElementById(id).addEventListener('input', calcHealth);
-            document.getElementById(id).addEventListener('change', calcHealth);
-        });
-
-        // 3. Dynamic Pricing Calculator Engine
         function calcPricing() {
             const v = parseFloat(document.getElementById('p_volt').value) || 0;
             const ah = parseFloat(document.getElementById('p_ah').value) || 0;
-            const chem = document.getElementById('p_chem').value;
-            const delivery = parseFloat(document.getElementById('p_del').value) || 0;
             const surge = Math.max(1.0, parseFloat(document.getElementById('p_surge').value) || 1.0);
 
             const kwh = (v * ah) / 1000.0;
-            const grid_tariff = 65.0;
-            const wear_rate = (chem === 'LFP') ? 6.0 : 12.0;
-            const op_overhead = 30.0;
-
-            const grid_cost = kwh * grid_tariff;
-            const wear_cost = kwh * wear_rate;
-            const base_cost = grid_cost + wear_cost + op_overhead + delivery;
+            const base_cost = (kwh * 65.0) + (kwh * 6.0) + 30.0;
             const final_price = base_cost * 1.20 * surge;
 
             document.getElementById('out_kwh').innerText = kwh.toFixed(3) + " kWh";
-            document.getElementById('out_grid').innerText = grid_cost.toFixed(2) + " PKR";
-            document.getElementById('out_wear').innerText = wear_cost.toFixed(2) + " PKR";
-            document.getElementById('out_base').innerText = base_cost.toFixed(2) + " PKR";
+            document.getElementById('out_grid').innerText = (kwh * 65.0).toFixed(2) + " PKR";
             document.getElementById('out_final').innerText = final_price.toFixed(2) + " PKR";
         }
 
-        // Attach listeners to Pricing inputs
-        ['p_volt', 'p_ah', 'p_chem', 'p_del', 'p_surge'].forEach(id => {
-            document.getElementById(id).addEventListener('input', calcPricing);
-            document.getElementById(id).addEventListener('change', calcPricing);
+        ['h_rem', 'h_full', 'h_rated', 'h_temp', 'h_cycles'].forEach(id => {
+            document.getElementById(id).addEventListener('input', calcHealth);
         });
 
-        // Initial trigger
+        ['p_volt', 'p_ah', 'p_surge'].forEach(id => {
+            document.getElementById(id).addEventListener('input', calcPricing);
+        });
+
         calcHealth();
         calcPricing();
     </script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voltora | Smart E-Bike Battery Swap Network (Karachi)</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-main: #090d16;
-            --bg-card: #111827;
-            --bg-card-hover: #1f2937;
-            --accent-green: #00e676;
-            --accent-cyan: #00e5ff;
-            --accent-warn: #ff9100;
-            --accent-danger: #ff1744;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --border-color: #1e293b;
-            --font-sans: 'Inter', system-ui, sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navigation Header */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(9, 13, 22, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            letter-spacing: -0.5px;
-        }
-
-        .brand span {
-            color: var(--accent-green);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.8rem;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent-green);
-        }
-
-        .nav-btn {
-            background: linear-gradient(135deg, var(--accent-green), #00c853);
-            color: #000;
-            font-weight: 700;
-            padding: 0.6rem 1.4rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0, 230, 118, 0.35);
-        }
-
-        /* Hero Section */
-        .hero {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 4rem 5% 3rem 5%;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(0, 230, 118, 0.1);
-            border: 1px solid rgba(0, 230, 118, 0.3);
-            color: var(--accent-green);
-            padding: 0.35rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            line-height: 1.15;
-            font-weight: 800;
-            margin-bottom: 1.2rem;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border-color);
-            background: var(--bg-card);
-            color: var(--text-primary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s ease, border-color 0.2s ease;
-        }
-
-        .btn-outline:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--accent-cyan);
-        }
-
-        /* Live IoT Dashboard Card */
-        .telemetry-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.8rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            position: relative;
-        }
-
-        .telemetry-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-        }
-
-        .card-title-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .card-title-bar h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .live-pulse {
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-green);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-green);
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
-        }
-
-        .telemetry-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .t-box {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--border-color);
-            padding: 1rem;
-            border-radius: 10px;
-        }
-
-        .t-box label {
-            display: block;
-            font-size: 0.78rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .t-box .val {
-            font-family: var(--font-mono);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        /* Section Commons */
-        .section-container {
-            max-width: 1280px;
-            margin: 4rem auto;
-            padding: 0 5%;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.3rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* Interactive Calculators Layout */
-        .calc-dual-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .calc-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-        }
-
-        .calc-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.2rem;
-            color: var(--accent-green);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        .form-group.full {
-            grid-column: span 2;
-        }
-
-        .form-group label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .form-group input, .form-group select {
-            background: var(--bg-main);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 0.7rem 0.9rem;
-            border-radius: 8px;
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.2s ease;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            border-color: var(--accent-green);
-        }
-
-        .result-box {
-            margin-top: 1.5rem;
-            background: rgba(0, 230, 118, 0.05);
-            border: 1px solid rgba(0, 230, 118, 0.3);
-            border-radius: 10px;
-            padding: 1.2rem;
-        }
-
-        .result-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .result-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .result-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .result-value {
-            font-family: var(--font-mono);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .result-value.large {
-            font-size: 1.8rem;
-            color: var(--accent-green);
-        }
-
-        .status-pill {
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .status-pill.normal { background: rgba(0, 230, 118, 0.2); color: var(--accent-green); }
-        .status-pill.warning { background: rgba(255, 145, 0, 0.2); color: var(--accent-warn); }
-        .status-pill.retire { background: rgba(255, 23, 68, 0.2); color: var(--accent-danger); }
-
-        /* Station Rebalancing Grid */
-        .station-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .station-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.5rem;
-            transition: border-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .station-card:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-3px);
-        }
-
-        .station-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .station-name {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .progress-bar-bg {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            height: 8px;
-            overflow: hidden;
-            margin: 0.8rem 0;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
-            border-radius: 10px;
-        }
-
-        .station-stats {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        /* Subscription Tiers */
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .plan-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .plan-card.featured {
-            border-color: var(--accent-green);
-            background: rgba(0, 230, 118, 0.02);
-        }
-
-        .plan-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-green);
-            color: #000;
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 0.2rem 0.8rem;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-
-        .plan-price {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin: 1rem 0;
-        }
-
-        .plan-price span {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .plan-features {
-            list-style: none;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .plan-features li {
-            margin-bottom: 0.6rem;
-        }
-
-        /* Developer API Docs Panel */
-        .api-panel {
-            background: #0d1117;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 2rem;
-            font-family: var(--font-mono);
-            font-size: 0.88rem;
-            color: #c9d1d9;
-            overflow-x: auto;
-        }
-
-        .code-keyword { color: #ff7b72; }
-        .code-string { color: #a5d6ff; }
-        .code-comment { color: #8b949e; }
-        .code-func { color: #d2a8ff; }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 5%;
-            margin-top: 5rem;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 900px) {
-            .hero, .calc-dual-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-group.full {
-                grid-column: span 1;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header Navigation -->
-    <header>
-        <a href="#" class="brand">⚡ VOLT<span>ORA</span></a>
-        <nav>
-            <ul>
-                <li><a href="#telemetry">Live IoT</a></li>
-                <li><a href="#health-calc">Health Engine</a></li>
-                <li><a href="#pricing-calc">Dynamic Pricing</a></li>
-                <li><a href="#stations">Stations & Rebalancing</a></li>
-                <li><a href="#plans">Plans</a></li>
-                <li><a href="#api-docs">API Docs</a></li>
-            </ul>
-        </nav>
-        <a href="#pricing-calc" class="nav-btn">Swap Now</a>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div>
-            <div class="hero-tag"><span class="live-pulse"></span> E-Bike Battery Swap Network • Karachi</div>
-            <h1>Instant Swaps. <br><span class="highlight">Zero Charging Wait.</span></h1>
-            <p>Voltora operates smart swap lockers and delivery vans across Karachi. Powered by IoT cell health diagnostics, KE tariff dynamic pricing, and AI fleet rebalancing.</p>
-            <div class="hero-actions">
-                <a href="#pricing-calc" class="nav-btn">Calculate Swap Cost</a>
-                <a href="#stations" class="btn-outline">Find Nearest Station</a>
-            </div>
-        </div>
-
-        <!-- Live IoT Telemetry Monitor -->
-        <div class="telemetry-card" id="telemetry">
-            <div class="card-title-bar">
-                <h3><span class="live-pulse"></span> MQTT Live Stream: VOLT-PK-0821</h3>
-                <span class="status-pill normal" id="livePill">NORMAL</span>
-            </div>
-            <div class="telemetry-grid">
-                <div class="t-box">
-                    <label>Voltage (V)</label>
-                    <div class="val" id="liveV">48.2 V</div>
-                </div>
-                <div class="t-box">
-                    <label>Temperature (°C)</label>
-                    <div class="val" id="liveT">38.5 °C</div>
-                </div>
-                <div class="t-box">
-                    <label>State of Charge (SoC)</label>
-                    <div class="val" id="liveSoC">92.0%</div>
-                </div>
-                <div class="t-box">
-                    <label>Health Score</label>
-                    <div class="val" style="color: var(--accent-green);" id="liveScore">88.5%</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Computational Engines -->
-    <section class="section-container" id="health-calc">
-        <div class="section-header">
-            <h2>Computational Engineering Engines</h2>
-            <p>Real-time calculation engines enforcing Pakistan grid standards and climatic parameters</p>
-        </div>
-
-        <div class="calc-dual-grid">
-            
-            <!-- Engine 1: Battery Health Engine -->
-            <div class="calc-card">
-                <h3>🔋 Battery Health Engine</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Remaining Ah</label>
-                        <input type="number" id="h_rem" value="18.4" step="0.1">
-                    </div>
-                    <div class="form-group">
-                        <label>Full-Charge Ah</label>
-                        <input type="number" id="h_full" value="18.4" step="0.1">
-                    </div>
-                    <div class="form-group">
-                        <label>Rated Factory Ah</label>
-                        <input type="number" id="h_rated" value="20.0" step="0.1">
-                    </div>
-                    <div class="form-group">
-                        <label>Temperature (°C)</label>
-                        <input type="number" id="h_temp" value="42.0" step="0.5">
-                    </div>
-                    <div class="form-group">
-                        <label>Cycles Used</label>
-                        <input type="number" id="h_cycles" value="300">
-                    </div>
-                    <div class="form-group">
-                        <label>Chemistry</label>
-                        <select id="h_chem">
-                            <option value="LFP">LFP (1500 Cycles Life)</option>
-                            <option value="NMC">NMC (700 Cycles Life)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Recorded Faults</label>
-                        <input type="number" id="h_faults" value="2">
-                    </div>
-                    <div class="form-group">
-                        <label>Operating Hours</label>
-                        <input type="number" id="h_hours" value="500">
-                    </div>
-                </div>
-
-                <div class="result-box">
-                    <div class="result-row">
-                        <span class="result-label">State of Charge (SoC):</span>
-                        <span class="result-value" id="out_soc">92.0%</span>
-                    </div>
-                    <div class="result-row">
-                        <span class="result-label">State of Health (SoH):</span>
-                        <span class="result-value" id="out_soh">92.0%</span>
-                    </div>
-                    <div class="result-row">
-                        <span class="result-label">Thermal Penalty:</span>
-                        <span class="result-value" id="out_ptemp">17.50</span>
-                    </div>
-                    <div class="result-row">
-                        <span class="result-label">Composite Health Score:</span>
-                        <span class="result-value large" id="out_score">88.46%</span>
-                    </div>
-                    <div class="result-row" style="margin-top: 0.8rem; padding-top: 0.5rem; border-top: 1px solid var(--border-color);">
-                        <span class="result-label">Operational Decision:</span>
-                        <span class="status-pill normal" id="out_status">NORMAL OPERATION</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Engine 2: Dynamic Pricing Engine -->
-            <div class="calc-card" id="pricing-calc">
-                <h3>💳 Dynamic Pricing & Bill Engine</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Pack Voltage (V)</label>
-                        <input type="number" id="p_volt" value="48">
-                    </div>
-                    <div class="form-group">
-                        <label>Capacity Used (Ah)</label>
-                        <input type="number" id="p_ah" value="20">
-                    </div>
-                    <div class="form-group">
-                        <label>Cell Chemistry</label>
-                        <select id="p_chem">
-                            <option value="LFP">LFP (6 PKR/kWh Wear)</option>
-                            <option value="NMC">NMC (12 PKR/kWh Wear)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Fulfillment Option</label>
-                        <select id="p_del">
-                            <option value="0">Station / Locker Swap (0 PKR)</option>
-                            <option value="150">Pay-First Home Delivery (+150 PKR)</option>
-                        </select>
-                    </div>
-                    <div class="form-group full">
-                        <label>Demand Surge Factor (Surge Multiplier)</label>
-                        <input type="number" id="p_surge" value="1.0" step="0.1" min="1.0" max="2.0">
-                    </div>
-                </div>
-
-                <div class="result-box">
-                    <div class="result-row">
-                        <span class="result-label">Energy Consumed:</span>
-                        <span class="result-value" id="out_kwh">0.960 kWh</span>
-                    </div>
-                    <div class="result-row">
-                        <span class="result-label">Grid Electricity (65 PKR/kWh):</span>
-                        <span class="result-value" id="out_grid">62.40 PKR</span>
-                    </div>
-                    <div class="result-row">
-                        <span class="result-label">Degradation Wear Fee:</span>
-                        <span class="result-value" id="out_wear">5.76 PKR</span>
-                    </div>
-                    <div class="result-row">
-                        <span class="result-label">Base Cost Sum:</span>
-                        <span class="result-value" id="out_base">98.16 PKR</span>
-                    </div>
-                    <div class="result-row" style="margin-top: 0.8rem; padding-top: 0.5rem; border-top: 1px solid var(--border-color);">
-                        <span class="result-label">Final Swap Price (incl. 20% Margin):</span>
-                        <span class="result-value large" id="out_final">117.79 PKR</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Station Rebalancing Monitor -->
-    <section class="section-container" id="stations">
-        <div class="section-header">
-            <h2>Karachi Swap Station Fleet Monitor</h2>
-            <p>Live inventory tracking and automated van rebalancing priority ranking</p>
-        </div>
-
-        <div class="station-grid">
-            <div class="station-card">
-                <div class="station-header">
-                    <div class="station-name">Clifton Block 2 Locker</div>
-                    <span class="status-pill normal">STOCK OK</span>
-                </div>
-                <div class="station-stats">
-                    <span>Stock: 8 / 10 Charged</span>
-                    <span>Priority (P_s): 0.20</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 80%;"></div>
-                </div>
-            </div>
-
-            <div class="station-card">
-                <div class="station-header">
-                    <div class="station-name">Gulshan-e-Iqbal Hub</div>
-                    <span class="status-pill warning">REBALANCING NEEDED</span>
-                </div>
-                <div class="station-stats">
-                    <span>Stock: 3 / 12 Charged</span>
-                    <span>Priority (P_s): 0.75</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 25%; background: var(--accent-warn);"></div>
-                </div>
-            </div>
-
-            <div class="station-card">
-                <div class="station-header">
-                    <div class="station-name">Saddar Empress Locker</div>
-                    <span class="status-pill retire">CRITICAL SHORTAGE</span>
-                </div>
-                <div class="station-stats">
-                    <span>Stock: 1 / 10 Charged</span>
-                    <span>Priority (P_s): 0.90</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 10%; background: var(--accent-danger);"></div>
-                </div>
-            </div>
-
-            <div class="station-card">
-                <div class="station-header">
-                    <div class="station-name">DHA Phase 6 Station</div>
-                    <span class="status-pill normal">STOCK OK</span>
-                </div>
-                <div class="station-stats">
-                    <span>Stock: 9 / 10 Charged</span>
-                    <span>Priority (P_s): 0.10</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 90%;"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Subscription Plans -->
-    <section class="section-container" id="plans">
-        <div class="section-header">
-            <h2>Flexible Rider Subscription Plans</h2>
-            <p>Pay per swap or save with monthly plans tailored for commuters and gig drivers</p>
-        </div>
-
-        <div class="plans-grid">
-            <div class="plan-card">
-                <h3>Pay As You Go</h3>
-                <div class="plan-price">Dynamic <span>/ swap</span></div>
-                <ul class="plan-features">
-                    <li>✓ Standard station & locker swaps</li>
-                    <li>✓ Live health transparency</li>
-                    <li>✓ Pay-first online payment</li>
-                </ul>
-                <a href="#pricing-calc" class="btn-outline" style="display: block;">Calculate Swap</a>
-            </div>
-
-            <div class="plan-card featured">
-                <span class="plan-badge">POPULAR COMMUTER</span>
-                <h3>Starter 10</h3>
-                <div class="plan-price">1,100 PKR <span>/ month</span></div>
-                <ul class="plan-features">
-                    <li>✓ Includes 10 battery swaps</li>
-                    <li>✓ Reserved locker priority</li>
-                    <li>✓ Zero peak demand surge surcharge</li>
-                </ul>
-                <a href="#pricing-calc" class="nav-btn" style="display: block;">Choose Plan</a>
-            </div>
-
-            <div class="plan-card">
-                <h3>Pro 30</h3>
-                <div class="plan-price">3,150 PKR <span>/ month</span></div>
-                <ul class="plan-features">
-                    <li>✓ Includes 30 battery swaps</li>
-                    <li>✓ 1 Free Home Delivery / month</li>
-                    <li>✓ Priority station allocation</li>
-                </ul>
-                <a href="#pricing-calc" class="btn-outline" style="display: block;">Choose Plan</a>
-            </div>
-
-            <div class="plan-card">
-                <h3>Gig Delivery 60</h3>
-                <div class="plan-price">6,000 PKR <span>/ month</span></div>
-                <ul class="plan-features">
-                    <li>✓ Includes 60 battery swaps</li>
-                    <li>✓ 3 Free Home Deliveries / month</li>
-                    <li>✓ Dedicated delivery van dispatch</li>
-                </ul>
-                <a href="#pricing-calc" class="btn-outline" style="display: block;">Choose Plan</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Developer & Cloud API Panel -->
-    <section class="section-container" id="api-docs">
-        <div class="section-header">
-            <h2>Developer & Cloud Architecture Specification</h2>
-            <p>Private cloud database (PostgreSQL + TimescaleDB) and FastAPI backend endpoints</p>
-        </div>
-
-        <div class="api-panel">
-            <p class="code-comment">// Developer-Only Cloud Database Connection & MQTT Architecture</p>
-            <p><span class="code-keyword">POST</span> <span class="code-string">https://api.voltora.online/v1/swaps/process</span></p>
-            <br>
-            <p class="code-comment">// MQTT Ingestion Topic Structure</p>
-            <p><span class="code-func">Topic:</span> <span class="code-string">voltora/{station_id}/{slot_id}/telemetry</span></p>
-            <p><span class="code-func">Payload:</span> { <span class="code-string">"voltage"</span>: 48.0, <span class="code-string">"capacity_ah"</span>: 20.0, <span class="code-string">"temperature_c"</span>: 42.0, <span class="code-string">"cycles"</span>: 300 }</p>
-            <br>
-            <p class="code-comment">// FastAPI Response Endpoint Output</p>
-            <p>{ <span class="code-string">"health_score"</span>: 88.46, <span class="code-string">"status"</span>: <span class="code-string">"NORMAL_OPERATION"</span>, <span class="code-string">"price_final_pkr"</span>: 117.79 }</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Voltora Battery-Swap Network &copy; 2026. Built for CS2021 Complex Engineering Problem Project.</p>
-        <p>Team Members: Muhammad Ali Rao (25K-6059) & Saad Hussain (25K-6032)</p>
-    </footer>
-
-    <!-- Interactive JavaScript Engine -->
-    <script>
-        // 1. Live IoT Telemetry Simulator
-        function updateLiveStream() {
-            const v = (47.5 + Math.random() * 1.2).toFixed(1);
-            const t = (37.0 + Math.random() * 4.0).toFixed(1);
-            const soc = (90.0 + Math.random() * 8.0).toFixed(1);
-            
-            document.getElementById('liveV').innerText = v + " V";
-            document.getElementById('liveT').innerText = t + " °C";
-            document.getElementById('liveSoC').innerText = soc + "%";
-            
-            if (parseFloat(t) > 55.0) {
-                document.getElementById('livePill').className = "status-pill retire";
-                document.getElementById('livePill').innerText = "LOCKOUT";
-            } else if (parseFloat(t) > 40.0) {
-                document.getElementById('livePill').className = "status-pill warning";
-                document.getElementById('livePill').innerText = "WARM";
-            } else {
-                document.getElementById('livePill').className = "status-pill normal";
-                document.getElementById('livePill').innerText = "NORMAL";
-            }
-        }
-        setInterval(updateLiveStream, 3000);
-
-        // 2. Battery Health Calculator Engine
-        function calcHealth() {
-            const rem = parseFloat(document.getElementById('h_rem').value) || 0;
-            const full = parseFloat(document.getElementById('h_full').value) || 0;
-            const rated = parseFloat(document.getElementById('h_rated').value) || 1;
-            const temp = parseFloat(document.getElementById('h_temp').value) || 0;
-            const cycles = parseFloat(document.getElementById('h_cycles').value) || 0;
-            const chem = document.getElementById('h_chem').value;
-            const faults = parseFloat(document.getElementById('h_faults').value) || 0;
-            const hours = parseFloat(document.getElementById('h_hours').value) || 1;
-
-            const soc = Math.min(100, Math.max(0, (rem / full) * 100));
-            const soh = Math.min(100, Math.max(0, (full / rated) * 100));
-
-            let p_temp = 0;
-            if (temp > 55) {
-                p_temp = 100;
-            } else if (temp > 35) {
-                p_temp = 2.5 * (temp - 35);
-            }
-
-            const rated_cycles = (chem === 'LFP') ? 1500 : 700;
-            const p_cycle = Math.min(100, (cycles / rated_cycles) * 100);
-            const p_fault = Math.min(100, (faults / hours) * 100);
-
-            const score = 0.5 * soh + 0.2 * (100 - p_temp) + 0.2 * (100 - p_cycle) + 0.1 * (100 - p_fault);
-
-            document.getElementById('out_soc').innerText = soc.toFixed(1) + "%";
-            document.getElementById('out_soh').innerText = soh.toFixed(1) + "%";
-            document.getElementById('out_ptemp').innerText = p_temp.toFixed(2);
-            document.getElementById('out_score').innerText = score.toFixed(2) + "%";
-
-            const statusEl = document.getElementById('out_status');
-            if (temp > 55) {
-                statusEl.className = "status-pill retire";
-                statusEl.innerText = "HARD LOCKOUT (OVERTEMP)";
-            } else if (score >= 80) {
-                statusEl.className = "status-pill normal";
-                statusEl.innerText = "NORMAL OPERATION";
-            } else if (score >= 70) {
-                statusEl.className = "status-pill warning";
-                statusEl.innerText = "MAINTENANCE WARNING";
-            } else {
-                statusEl.className = "status-pill retire";
-                statusEl.innerText = "RETIRE TO 2ND LIFE";
-            }
-        }
-
-        // Attach listeners to Health inputs
-        ['h_rem', 'h_full', 'h_rated', 'h_temp', 'h_cycles', 'h_chem', 'h_faults', 'h_hours'].forEach(id => {
-            document.getElementById(id).addEventListener('input', calcHealth);
-            document.getElementById(id).addEventListener('change', calcHealth);
-        });
-
-        // 3. Dynamic Pricing Calculator Engine
-        function calcPricing() {
-            const v = parseFloat(document.getElementById('p_volt').value) || 0;
-            const ah = parseFloat(document.getElementById('p_ah').value) || 0;
-            const chem = document.getElementById('p_chem').value;
-            const delivery = parseFloat(document.getElementById('p_del').value) || 0;
-            const surge = Math.max(1.0, parseFloat(document.getElementById('p_surge').value) || 1.0);
-
-            const kwh = (v * ah) / 1000.0;
-            const grid_tariff = 65.0;
-            const wear_rate = (chem === 'LFP') ? 6.0 : 12.0;
-            const op_overhead = 30.0;
-
-            const grid_cost = kwh * grid_tariff;
-            const wear_cost = kwh * wear_rate;
-            const base_cost = grid_cost + wear_cost + op_overhead + delivery;
-            const final_price = base_cost * 1.20 * surge;
-
-            document.getElementById('out_kwh').innerText = kwh.toFixed(3) + " kWh";
-            document.getElementById('out_grid').innerText = grid_cost.toFixed(2) + " PKR";
-            document.getElementById('out_wear').innerText = wear_cost.toFixed(2) + " PKR";
-            document.getElementById('out_base').innerText = base_cost.toFixed(2) + " PKR";
-            document.getElementById('out_final').innerText = final_price.toFixed(2) + " PKR";
-        }
-
-        // Attach listeners to Pricing inputs
-        ['p_volt', 'p_ah', 'p_chem', 'p_del', 'p_surge'].forEach(id => {
-            document.getElementById(id).addEventListener('input', calcPricing);
-            document.getElementById(id).addEventListener('change', calcPricing);
-        });
-
-        // Initial trigger
-        calcHealth();
-        calcPricing();
-    </script>
-</body>
->>>>>>> 88937733f84d98bbf80ccd1fd24e4776941d7ec2
 </html>

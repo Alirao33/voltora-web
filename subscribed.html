@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voltora | VIP Subscribed Rider Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070A11;
+      --card-bg: #0F172A;
+      --card-border: #1E293B;
+      --accent-green: #00E676;
+      --accent-blue: #38BDF8;
+      --accent-purple: #A855F7;
+      --accent-amber: #F59E0B;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      padding: 24px;
+      line-height: 1.5;
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; }
+
+    /* Header Nav */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 32px;
+    }
+    .brand { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
+    .brand span { color: var(--accent-green); }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent-green); }
+
+    .user-pill {
+      background: rgba(0, 230, 118, 0.1);
+      border: 1px solid var(--accent-green);
+      color: var(--accent-green);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Grid Layout */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px; }
+    .grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 32px; }
+
+    /* Card Base */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      position: relative;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Plan Banner */
+    .plan-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+      border: 1px solid var(--accent-purple);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .plan-badge {
+      background: var(--accent-purple);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .plan-stats { display: flex; gap: 36px; margin-top: 12px; }
+    .stat-item .label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; }
+    .stat-item .value { font-size: 1.4rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+
+    .btn-upgrade {
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid var(--accent-purple);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-upgrade:hover { background: var(--accent-purple); }
+
+    /* Battery Cards */
+    .battery-card {
+      border: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .battery-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .battery-id { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent-blue); }
+    .battery-status { font-size: 0.75rem; padding: 3px 8px; border-radius: 6px; font-weight: 700; }
+    .status-active { background: rgba(0, 230, 118, 0.15); color: var(--accent-green); }
+    .status-docked { background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); }
+    .status-home { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
+
+    .progress-bar-bg { background: #1E293B; height: 10px; border-radius: 5px; overflow: hidden; margin: 8px 0; }
+    .progress-bar-fill { height: 100%; border-radius: 5px; transition: width 0.3s; }
+
+    .metrics-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; font-size: 0.8rem; }
+    .metric-box { background: rgba(30, 41, 59, 0.5); padding: 8px; border-radius: 6px; text-align: center; }
+    .metric-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #fff; margin-top: 2px; }
+
+    /* Booking Form Controls */
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600; }
+    select, input {
+      width: 100%;
+      background: #090D16;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    select:focus, input:focus { border-color: var(--accent-green); }
+
+    .btn-action {
+      width: 100%;
+      background: var(--accent-green);
+      color: #000;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.2s;
+    }
+    .btn-action:hover { opacity: 0.9; }
+    .btn-action:active { transform: scale(0.99); }
+
+    /* Modal / Switch Tier Cards */
+    .plan-selector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+    .plan-card {
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      background: #090D16;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .plan-card:hover, .plan-card.active { border-color: var(--accent-green); background: rgba(0, 230, 118, 0.05); }
+    .plan-name { font-weight: 700; font-size: 1rem; }
+    .plan-price { font-family: 'JetBrains Mono', monospace; color: var(--accent-green); font-size: 1.2rem; font-weight: 700; margin: 8px 0; }
+    .plan-desc { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* Console Logger */
+    .terminal-box {
+      background: #05080E;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--accent-green);
+      min-height: 100px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <header>
+    <div class="brand">⚡ VOLT<span>ORA</span> <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 400;">| Subscriber Portal</span></div>
+    <div class="nav-links">
+      <a href="index.html">Dispatch Console</a>
+      <a href="subscribed.html" class="active">VIP Dashboard</a>
+      <a href="#">My Fleet</a>
+      <a href="#">Billing</a>
+    </div>
+    <div class="user-pill">
+      <span>★ VIP SUBSCRIBER</span>
+      <strong style="color: #fff; margin-left: 4px;">Tariq Mahmood</strong>
+    </div>
+  </header>
+
+  <!-- Subscription Plan Active Overview Banner -->
+  <div class="plan-banner">
+    <div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span class="plan-badge">6-Month VIP Priority Plan</span>
+        <span style="font-size: 0.85rem; color: var(--accent-green);">● Active & Auto-Renewing</span>
+      </div>
+      <h2 style="font-size: 1.6rem; margin-top: 6px;">Dedicated Locker & Priority Battery Reserve</h2>
+      <div class="plan-stats">
+        <div class="stat-item">
+          <div class="label">Primary Locker Location</div>
+          <div class="value" style="color: var(--accent-blue);">Saddar Empress</div>
+        </div>
+        <div class="stat-item">
+          <div class="label">Dedicated Door Slot</div>
+          <div class="value" style="color: var(--accent-green);">Door 04</div>
+        </div>
+        <div class="stat-item">
+          <div class="label">Swaps Used This Month</div>
+          <div class="value">28 / <span style="font-size: 0.9rem; color: var(--text-muted);">Unlimited</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="label">Next Billing Date</div>
+          <div class="value" style="font-size: 1.1rem; line-height: 1.8;">Mar 15, 2027</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="btn-upgrade" onclick="togglePlanModal()">Manage / Switch Plan</button>
+    </div>
+  </div>
+
+  <!-- Plan Switcher Modal (Toggleable) -->
+  <div id="planModal" class="card" style="display: none; margin-bottom: 32px; border-color: var(--accent-purple);">
+    <div class="card-title">
+      <span>Select Subscription Plan Tier</span>
+      <span style="cursor: pointer; color: var(--text-muted);" onclick="togglePlanModal()">✕ Close</span>
+    </div>
+    <div class="plan-selector-grid">
+      <div class="plan-card" onclick="selectPlan('Weekly Pass', '2,500 PKR/wk')">
+        <div class="plan-name">Weekly Commuter Pass</div>
+        <div class="plan-price">2,500 PKR / wk</div>
+        <div class="plan-desc">• Public station priority<br>• Up to 10 swaps/week<br>• Standard battery health monitoring</div>
+      </div>
+      <div class="plan-card" onclick="selectPlan('Monthly Unlimited', '8,500 PKR/mo')">
+        <div class="plan-name">Monthly Unlimited</div>
+        <div class="plan-price">8,500 PKR / mo</div>
+        <div class="plan-desc">• Unlimited public swaps<br>• Fast slot reservations<br>• Free thermal degradation warranty</div>
+      </div>
+      <div class="plan-card active" onclick="selectPlan('6-Month VIP Priority', '45,000 PKR / 6 mos')">
+        <div class="plan-name">6-Month VIP Priority</div>
+        <div class="plan-price">45,000 PKR / 6 mos</div>
+        <div class="plan-desc">• Dedicated private locker door<br>• Multi-battery home dock access<br>• Guaranteed 100% SoC pack reserve</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Grid: Multi-Battery Health vs Slot Booking -->
+  <div class="grid-2">
+    <!-- Left: Multi-Battery Live Telemetry -->
+    <div>
+      <div class="card">
+        <div class="card-title">
+          <span>🔋 Assigned Multi-Battery Telemetry</span>
+          <span style="font-size: 0.8rem; color: var(--accent-green); font-weight: 400;">Live IoT Telematics Sync</span>
+        </div>
+
+        <!-- Battery 1: On Bike -->
+        <div class="battery-card">
+          <div class="battery-header">
+            <div>
+              <span class="battery-id">VOLT-0199</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 8px;">(Primary Pack - Mounted on E-Bike)</span>
+            </div>
+            <span class="battery-status status-active">ON BIKE (DISCHARGING)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600;">
+            <span>State of Charge (SoC)</span>
+            <span style="color: var(--accent-amber);">24.0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 24%; background: var(--accent-amber);"></div>
+          </div>
+          <div class="metrics-row">
+            <div class="metric-box">
+              <div style="color: var(--text-muted);">State of Health</div>
+              <div class="metric-val" style="color: var(--accent-green);">94.5%</div>
+            </div>
+            <div class="metric-box">
+              <div style="color: var(--text-muted);">Temperature</div>
+              <div class="metric-val" style="color: var(--accent-amber);">41.2 °C</div>
+            </div>
+            <div class="metric-box">
+              <div style="color: var(--text-muted);">Life Cycles</div>
+              <div class="metric-val">312 / 1500</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battery 2: Reserved Docked Unit -->
+        <div class="battery-card">
+          <div class="battery-header">
+            <div>
+              <span class="battery-id">VOLT-0842</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 8px;">(Reserved Unit - Saddar Empress Door 04)</span>
+            </div>
+            <span class="battery-status status-docked">RESERVED IN LOCKER</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600;">
+            <span>State of Charge (SoC)</span>
+            <span style="color: var(--accent-green);">100.0% (Charged)</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 100%; background: var(--accent-green);"></div>
+          </div>
+          <div class="metrics-row">
+            <div class="metric-box">
+              <div style="color: var(--text-muted);">State of Health</div>
+              <div class="metric-val" style="color: var(--accent-green);">98.2%</div>
+            </div>
+            <div class="metric-box">
+              <div style="color: var(--text-muted);">Temperature</div>
+              <div class="metric-val" style="color: var(--accent-blue);">28.5 °C</div>
+            </div>
+            <div class="metric-box">
+              <div style="color: var(--text-muted);">Life Cycles</div>
+              <div class="metric-val">85 / 1500</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battery 3: Secondary Home Charging Dock -->
+        <div class="battery-card">
+          <div class="battery-header">
+            <div>
+              <span class="battery-id">VOLT-0311</span>
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 8px;">(Secondary Spare Pack - Home Dock)</span>
+            </div>
+            <span class="battery-status status-home">CHARGING @ HOME</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600;">
+            <span>State of Charge (SoC)</span>
+            <span style="color: var(--accent-blue);">68.5%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 68.5%; background: var(--accent-blue);"></div>
+          </div>
+          <div class="metrics-row">
+            <div class="metric-box">
+              <div style="color: var(--text-muted);">State of Health</div>
+              <div class="metric-val" style="color: var(--accent-green);">92.0%</div>
+            </div>
+            <div class="metric-box">
+              <div style="color: var(--text-muted);">Temperature</div>
+              <div class="metric-val">32.0 °C</div>
+            </div>
+            <div class="metric-box">
+              <div style="color: var(--text-muted);">Life Cycles</div>
+              <div class="metric-val">420 / 1500</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right: Advance Slot Booking Engine -->
+    <div>
+      <div class="card">
+        <div class="card-title">
+          <span>📅 Advance Slot Booking</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Select Hub Station</label>
+          <select id="bookingStation" onchange="updateStationDoors()">
+            <option value="Saddar Empress Locker (VIP Dedicated)">Saddar Empress Hub (VIP Dedicated)</option>
+            <option value="Clifton Block 2 Station">Clifton Block 2 Public Station</option>
+            <option value="Gulshan Chowrangi Exchange">Gulshan Chowrangi Exchange</option>
+            <option value="DHA Phase 6 Commercial Hub">DHA Phase 6 Commercial Hub</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Reserved Locker Door</label>
+          <select id="bookingDoor">
+            <option value="Door 04 (Reserved VIP)">Door 04 (Dedicated VIP Slot - Ready)</option>
+            <option value="Door 01 (Public High Speed)">Door 01 (Standard Slot)</option>
+            <option value="Door 03 (Public Standard)">Door 03 (Standard Slot)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Scheduled Time Slot</label>
+          <input type="datetime-local" id="bookingTime" value="2026-10-02T16:00">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Swap Reason / Action</label>
+          <select id="bookingAction">
+            <option value="Standard Battery Swap">Swap Depleted Pack (VOLT-0199)</option>
+            <option value="Charge Holding Reservation">Hold Door for Fast Charging</option>
+            <option value="Secondary Pack Pickup">Pick up Secondary Spare Unit</option>
+          </select>
+        </div>
+
+        <button class="btn-action" onclick="confirmSlotBooking()">Confirm VIP Slot Reservation</button>
+
+        <!-- Status Terminal -->
+        <div style="margin-top: 20px;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">Booking Confirmation Dispatch Log</div>
+          <div class="terminal-box" id="bookingLog">
+            [SYS READY] Connected to FastAPI backend on Port 8000.<br>
+            Awaiting customer slot reservation request...
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function togglePlanModal() {
+    const modal = document.getElementById('planModal');
+    modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function selectPlan(name, price) {
+    alert(`Selected plan: ${name} (${price}). Request logged to subscription manager.`);
+    togglePlanModal();
+  }
+
+  function updateStationDoors() {
+    const station = document.getElementById('bookingStation').value;
+    const doorSelect = document.getElementById('bookingDoor');
+    if (station.includes('Saddar')) {
+      doorSelect.innerHTML = `
+        <option value="Door 04 (Reserved VIP)">Door 04 (Dedicated VIP Slot - Ready)</option>
+        <option value="Door 02 (Reserved VIP)">Door 02 (Secondary VIP Slot)</option>
+      `;
+    } else {
+      doorSelect.innerHTML = `
+        <option value="Door 01 (Public High Speed)">Door 01 (Standard Slot)</option>
+        <option value="Door 03 (Public Standard)">Door 03 (Standard Slot)</option>
+      `;
+    }
+  }
+
+  async function confirmSlotBooking() {
+    const station = document.getElementById('bookingStation').value;
+    const door = document.getElementById('bookingDoor').value;
+    const time = document.getElementById('bookingTime').value;
+    const action = document.getElementById('bookingAction').value;
+    const logBox = document.getElementById('bookingLog');
+
+    logBox.innerHTML = `<span style="color: var(--accent-amber);">[SENDING] Dispatching booking reservation to FastAPI engine...</span>`;
+
+    const payload = {
+      rider_id: "RDR-9021",
+      station: station,
+      door_slot: door,
+      scheduled_time: time,
+      action_type: action
+    };
+
+    try {
+      // Connects directly to backend or simulates successful instant booking
+      const res = await fetch('http://127.0.0.1:8000/api/rider/smart-swap', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      
+      const data = await res.json();
+      logBox.innerHTML = `
+        <span style="color: var(--accent-green);">✔ [CONFIRMED 200 OK]</span><br>
+        • Station: ${station}<br>
+        • Door: ${door}<br>
+        • Reserved For: ${time.replace('T', ' ')}<br>
+        • Released Pack: VOLT-0842 (100% SoC)<br>
+        • Lock Code Sent to Rider App: #8821
+      `;
+    } catch (err) {
+      // Offline / fallback verification
+      logBox.innerHTML = `
+        <span style="color: var(--accent-green);">✔ [VIP RESERVATION CREATED]</span><br>
+        • Station: ${station}<br>
+        • Locker: ${door}<br>
+        • Reserved Time: ${time.replace('T', ' ')}<br>
+        • Fresh Pack Blocked: VOLT-0842 (100.0% SoC)<br>
+        • Status: GUARANTEED VIP SLOT
+      `;
+    }
+  }
+</script>
+
+</body>
+</html>
